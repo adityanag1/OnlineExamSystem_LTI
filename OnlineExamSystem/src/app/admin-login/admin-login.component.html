@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela Round">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<nav>
+  <ul>
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+  </ul>
+</nav>
+<div class="main">
+
+    
+    <div style="text-align:center">
+    <div  class="regform">
+      
+    <div>
+      <p class="adminWelcome">Welcome Admin!</p>
+    </div>
+        <div style="text-align: center;">
+            <p class="cen">Login with your UserID and Password</p>
+        </div>
+        
+        <form [formGroup]="ConForm" >
+            
+
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="font-family:Varela Round;">Login ID:</label>
+                <input type="email" class="w3-input"  name="email" formControlName="Loginid">
+                <div *ngIf="!ConForm.get('Loginid')?.valid &&(ConForm.get('Loginid')?.dirty||ConForm.get('Loginid')?.touched)" class="error">
+                      <div *ngIf="ConForm.get('Loginid')?.errors?.required">
+                      <small class="text-danger">Please Enter your Login ID</small>
+                      </div>
+                </div>
+            </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1"style="font-family:Varela Round;">Password:</label>
+                    <input type="password" class="w3-input" id="inputEmail4"  name="password" formControlName="Password">
+                    <div *ngIf="!ConForm.get('Password')?.valid &&(ConForm.get('Password')?.dirty||ConForm.get('Password')?.touched)" class="error">
+                      <div *ngIf="ConForm.get('Password')?.errors?.required">
+                      <small class="text-danger">Please Enter your Password</small>
+                      </div>
+                </div>
+                </div>
+
+                <div style="text-align: center;">
+                  <button class="button" (click)="onclick()" [disabled]="ConForm.invalid">Login</button>
+                </div>
+              
+<router-outlet></router-outlet>

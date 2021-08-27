@@ -1,0 +1,54 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+
+<div id = "Main-Container">
+    <h1 style="font-family:Varela Round;">This exam has been completed.</h1>
+    <div  style=" font-size: 16px;
+    font-family :Varela Round;
+    font-weight:bold;align-content: center;color:white; text-align: center" id = "Tag">Report</div>
+    <div id = "Table-Div">
+        <div>
+        <table>
+            <tr>
+                <th style="background-color:orange;color:white">Name</th>
+                <th>{{username}}</th>
+                
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Subject Name</td>
+                <td>{{subjectname}}</td>
+               
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Level 1 marks</td>
+                <td>{{level1marks}}</td>
+                
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Level 2 marks</td>
+                <td>{{level2marks}}</td>
+               
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Level 3 marks</td>
+                <td>{{level3marks}}</td>
+               
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Pass/Fail</td>
+                <td>{{passorfail}}</td>
+               
+            </tr>
+            <tr>
+                <td style="background-color:orange;color:white">Date of exam</td>
+                <td>{{dateofexam}}</td>
+               
+            </tr>
+        </table>
+    </div>
+    <div style="text-align:center">
+    <button (click)="dashboard()"  class = "button" style="width:200px;text-align:center">Go to Dashboard</button>
+    </div>
+   

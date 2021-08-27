@@ -1,0 +1,109 @@
+<script type="text/javascript">
+    window.history.forward();
+    function noBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+          
+    window.onunload = function () { null };
+</script>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+
+<div *ngIf = "isEmpty;else other_content">
+    
+     <h1>Oops! This exam doesn't have any questions yet.</h1>   
+    
+</div>
+
+
+<ng-template #other_content>
+<div fxLayout="row wrap"  style="margin-top: 5%; vertical-align: middle;" justify-content: center>
+    <div class="levelheading" style="margin-left: 45px;"fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+        {{levelstring}}
+    </div>
+    
+</div>
+
+<div class="timer">
+    <h4 style="font-family:Varela Round;margin-left: 15px;"> Count down timer </h4>
+    
+    <span id="hours"> {{hoursToDday}} </span>Hrs 
+    <span id="minutes"> {{minutesToDday}} </span>Min
+    <span id="seconds"> {{secondsToDday}} </span>S
+
+</div>
+
+    
+
+    
+
+    <div fxLayout="row wrap"  style="margin-top: 5%; vertical-align: middle;">
+        <div class="current-question-div" style="margin-left: 45px;margin-right: 45px;" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+            
+            {{question}}
+        </div>
+    </div>
+    <!-- <form [formGroup]="OptionForm" >
+        <div >
+            <input name = "option" id = "option" value= {{option1}} (change)="changeOption($event)" formControlName="option" type="radio" />
+            <label>  {{option1}}  </label>  
+        </div>
+        <div>
+            <input name= "option" id = "option" value= {{option2}}  (change)="changeOption($event)" formControlName="option" type="radio" />
+            <label>  {{option2}}  </label>  
+        </div>
+        
+            
+        <div>
+            <input name = "option" id = "option" value= {{option3}} (change)="changeOption($event)" formControlName="option" type="radio"/>
+            <label>  {{option3}}  </label>  
+        </div>
+        <div>  
+            <input name = "option" id = "option" value= {{option4}} (change)="changeOption($event)" formControlName="option" type="radio" />
+            <label>  {{option4}}  </label>  
+        </div>
+        -->
+        <br>
+        <div style="margin-left: 55px; font-family:Varela Round;">
+        <form [formGroup]="OptionForm" >
+        <mat-radio-group formControlName="option" name="option">
+            <mat-radio-button style=" font-family:Varela Round;"(change)="changeOption($event,'option1')" (click)="getOption('option1')">{{option1}}</mat-radio-button>
+            <br>
+            <br>
+            <mat-radio-button style=" font-family:Varela Round;"(change)="changeOption($event,'option2')" (click)="getOption('option2')">{{option2}}</mat-radio-button>
+            <br>
+            <br>
+            <mat-radio-button style=" font-family:Varela Round;" (change)="changeOption($event,'option3')" (click)="getOption('option3')">{{option3}}</mat-radio-button>
+            <br>
+            <br>
+            <mat-radio-button style=" font-family:Varela Round;"(change)="changeOption($event,'option4')" (click)="getOption('option4')">{{option4}}</mat-radio-button>
+            <br>
+            <br>
+        </mat-radio-group>
+    
+
+
+
+        <div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center">
+        <div *ngIf="prevAllowed">
+            <button class="previous-button" (click)="previousQuestion()">Previous</button>
+        </div>
+        <div *ngIf="nextAllowed">
+            <button class="next-button" (click)="nextQuestion()" >Next</button> 
+        </div>
+        
+        </div>  
+
+        <br>
+        <br>
+        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+        <button class="submit-button" (click)="submit()">Submit</button>
+        </div>
+    </form>
+</div>
+</ng-template>
+        

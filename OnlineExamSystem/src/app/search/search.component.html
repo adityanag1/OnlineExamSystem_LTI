@@ -1,0 +1,121 @@
+
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+<div class="background">
+  <nav>
+    <ul>
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AdminHome">Dashboard</a></li>
+        <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+          <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+          <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/Home">Log out</a></li>
+    </ul>
+  </nav>
+
+  <div style="padding-top: 40px;padding-left:40px;color:rgb(8, 8, 83);
+display: inline-block;font-family :Varela Round;font-weight: bold;font-size: 50px; text-align:left;">SEARCH STUDENTS</div>
+
+<div style="color:rgb(8, 8, 83);
+font-family :Varela Round;font-weight: bold;font-size:50 px;margin-left:35px;margin-bottom:20px">&nbsp;&nbsp;&nbsp;Admin</div>
+<div style="padding-left: 20%;
+padding-top: 100px;">
+   
+              <div>
+                <div>
+              
+                  <!-- Filters required to Search User Details -->
+                  <form [formGroup] = "SearchUForm" >
+                      <div class="main"><br>
+                          
+                          <table >
+                            <!-- List of Technologies -->
+                              <tr style="border-width: 3px; border-style: solid;border-color:navy;">
+                                  <td class="text">Subject:    </td>
+                                  <td >
+                                      <div>
+                                          <select formControlName = "technology" class="form-select" style="font-family: 'Times New Roman', Times, serif;">
+                                              <option selected disabled>Subjects</option>
+                                              <option [value]="t" *ngFor="let t of techList" >{{t}}</option> 
+                                          </select>
+                                          <div *ngIf="!SearchUForm.get('technology')?.valid &&(SearchUForm.get('technology')?.dirty||SearchUForm.get('technology')?.touched)"
+                                          class="error">
+                                          <div *ngIf="SearchUForm.get('technology')?.errors?.required">
+                                              <small class="text-danger">Select the Subject</small>
+                                           </div>
+                                      </div>
+                                      </div>
+                                  </td>
+                              </tr>
+                            <!-- List of States -->
+                              <tr>
+                                  <td class="text">State:    </td>
+                                  <td>
+                                      <div>
+                                          <select  formControlName = "state" (change)="getCitybyState($event)" class="form-select" aria-label=".form-select-sm example" style="font-family: 'Times New Roman', Times, serif;">
+                                              <option selected disabled>Select State</option>
+                                              <option [value]="s" *ngFor="let s of stateList" >{{s}}</option> 
+                                          </select>
+                                          <div *ngIf="!SearchUForm.get('state')?.valid &&(SearchUForm.get('state')?.dirty||SearchUForm.get('state')?.touched)"
+                                             class="error">
+                                            <div *ngIf="SearchUForm.get('state')?.errors?.required">
+                                              <small class="text-danger">Select the State</small>
+                                            </div>
+                                           </div>
+                                      </div>
+                                  </td>
+                            <!-- List of Cities based on respective states -->
+                              <tr>
+                                  <td class="text">City:    </td>
+                                  <td>
+                                      <div>
+                  
+                                          <select  formControlName = "city" class="form-select" style="font-family: 'Times New Roman', Times, serif;">
+                                              <option class="text" selected disabled>Select City</option>
+                                              <option [value]="c" *ngFor="let c of cityList" >{{c}}</option> 
+                                          </select>
+                                          <div *ngIf="!SearchUForm.get('city')?.valid &&(SearchUForm.get('city')?.dirty||SearchUForm.get('city')?.touched)"
+                                          class="error">
+                                         <div *ngIf="SearchUForm.get('city')?.errors?.required">
+                                           <small class="text-danger">Select City</small>
+                                         </div>
+                                        </div>
+                                      </div>
+                                  </td>  
+                              
+                          </table>
+                          <div class="d-flex justify-content-center">
+                            <button class="button"
+                                type="submit" (click)="getDetails(SearchUForm.value.technology, SearchUForm.value.state, SearchUForm.value.city); searchToggle()" [disabled]="SearchUForm.invalid" >Search</button>
+                        </div>
+                      </div>
+                  </form>
+                  <br>
+                  <br>
+  
+              <!-- Displaying the list of Required Students based on search constraints -->
+                  <div  *ngIf="tbltoggle">
+                  <table style="background-color:white;padding:10px;border-style:solid;border-color: navy;">
+  
+                      <tr class="text">
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Mobile No</th>
+                          <th>City</th>
+                          <th>State</th>
+                      </tr>
+  
+                      <tr *ngFor = "let r of result" class="text">
+                          <td>{{r.name}}</td>
+                          <td>{{r.emailId}}</td>
+                          <td>{{r.mobile}}</td>
+                          <td>{{r.city}}</td>
+                          <td>{{r.state}}</td>
+                      </tr>
+                  </table>
+                  </div>
+    
+                </div>
+              </div>
+</div>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela Round">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<nav>
+  <ul>
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="main">
+    
+    <div style="text-align:center">
+    <div  class="regform" style = " border-color: orange;border-style: solid;">
+      
+
+      
+        <div style="text-align: center;">
+          <br>
+          <br>
+            <p class="cen" style="color:orange" >Login</p>
+          <br>
+        </div>
+        
+        <form [formGroup]="ConForm" >
+            
+
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="font-family: Varela Round;">Email address:</label>
+                <input type="email" class="w3-input"  name="email" formControlName="emailid">
+                <div *ngIf="!ConForm.get('emailid')?.valid &&(ConForm.get('emailid')?.dirty||ConForm.get('emailid')?.touched)" class="error">
+                  <div *ngIf="ConForm.get('emailid')?.errors?.required">
+                  <small class="text-danger">Please Enter your Email ID</small>
+                  </div>
+            </div>
+                  
+             
+              </div>
+              
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1" style="font-family: Varela Round;">Password:</label>
+                  <input type="password" class="w3-input" id="inputEmail4"  name="password" formControlName="password">
+                     <!-- <div class="error-message" ng-show="registeruser.password.$invalid && registeruser.password.$dirty">
+                        Please enter at least 6 characters.
+                    </div> -->
+                    <div *ngIf="!ConForm.get('password')?.valid &&(ConForm.get('password')?.dirty||ConForm.get('password')?.touched)" class="error">
+                      <div *ngIf="ConForm.get('password')?.errors?.required">
+                      <small class="text-danger">Please Enter your Password</small>
+                      </div>
+                </div>
+                
+                      
+                
+                  </div>
+                  
+                
+
+                   
+
+                  <div style="text-align: center;">
+                    <button class = "button" (click)="onclick()">Login</button>
+                    
+              
+                </div>
+                <br>
+                <div style="text-align: center;margin-bottom: 5px; margin-top: 10px;">
+                  <a style="font-family:Varela Round;color:orange;font-size: 15px;" routerLink="/Register">Don't have an account? Register</a>
+                  
+                </div>
+
+              
+
+

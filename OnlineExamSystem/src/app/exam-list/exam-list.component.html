@@ -1,0 +1,125 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+<!-- <body style="overflow: hidden;
+background-image: url('../../assets/bg.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: fit-content;
+width: 100%;
+min-height: 100vh;"> -->
+
+
+<nav>
+  <ul>
+    <li style="color:orange;font-family:Varela Round;font-weight:medium;color:white"><a routerLink="/ExamList">Exams</a></li>
+      <li style="color:orange;font-family :Varela Round;font-weight:medium;color:white"><a routerLink="/UserDashboard" routerLinkActive="active" (click)="Dashboard()">Dashboard</a></li>
+      <li style="color:orange;font-family :Varela Round;font-weight:medium;color:white"><a routerLink="/Profile">Profile</a></li>
+      <li style="color:orange;font-family :Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+      <li style="color:orange;font-family :Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+      <li style="color:orange;font-family :Varela Round;font-weight:medium;color:white"><a routerLink="/Home">Log out</a></li>
+      
+  </ul>
+</nav>
+
+<div style="padding-top: 40px;padding-left:30px;color:orange;
+display: inline-block;font-family :Varela Round;font-weight: bold;font-size: 50px; text-align:left;">EXAMS</div>
+
+
+<div class = "container">
+  <!-- <div [formGroup]="ExamForm "> -->
+
+    
+  
+  <div class="grid" >
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center; ">
+      <article class="article">      
+        <img src="../../assets/yellow/Java.png" style="width:120px; height:70px; margin-top:40px" >
+      <div style="margin-top:20px">
+    
+      
+    <button class = "button"  (click)="TakeExam('1')">
+     Take Exam</button>
+  </div>
+  
+    </article>
+  </div>
+  </section>
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center">
+      <article class="article">      
+        <img src="../../assets/yellow/Python.png" style="width:200px; height:130px;margin-top:0px" >
+      <div style="margin-bottom:15px">
+  
+      
+        <button class = "button"   (click)="TakeExam('5')">
+     Take Exam</button>
+    
+      </div>
+     
+    </article>
+  </div>
+  </section>
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center">
+      <article class="article">
+      <img src="../../assets/yellow/SQL.png" style="width:120px; height:70px;margin-top:40px" >
+      <div style="margin-top:20px">
+
+      
+        <button class = "button"   (click)="TakeExam('2')">
+     Take Exam</button>
+      </div>
+     
+
+    </article>
+  </div>
+  </section>
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center">
+    <article class="article">
+      <img src="../../assets/yellow/PHP.png" style="width:120px; height:70px;margin-top:50px" >
+      <div style="margin-top:20px">
+ 
+      <button class = "button"  (click)="TakeExam('3')">
+       Take Exam</button>
+  </div>
+
+    </article>
+  </div>
+  </section>
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center">
+    <article class="article">
+      <img src="../../assets/yellow/Cplus.png" style="width:70px; height:80px;margin-top:40px" >
+      <div style="margin-top:20px">
+
+      <button class = "button"   (click)="TakeExam('4')">
+       Take Exam</button>
+  </div>
+
+    </article>
+  </div>
+  </section>
+  <section style="display: flex; justify-content: space-between;">
+    <div style = "text-align: center">
+    <article class="article">
+      <img src="../../assets/yellow/Csharp.NET.png" style="width:130px; height:130px;margin-top:10px" >
+      <div style="margin-bottom:10px">
+ 
+      <button class = "button" (click)="TakeExam('6')" >Take Exam</button>
+  </div>
+
+    </article>
+  </div>
+  </section>
+  </div>
+  <img src = "../../assets/yellow/image2.jpg" style="text-align:left;width:400px;
+height:330px;
+position: absolute;bottom: 8px; right: 16px;"/>
+</div>
+
+
+<!-- </div> -->

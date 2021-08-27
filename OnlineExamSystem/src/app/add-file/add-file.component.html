@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela Round">
+<div class="outer">
+  
+      <nav>
+        <ul>
+          <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AdminHome">Dashboard</a></li>
+            <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+              <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+              <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/Home">Log out</a></li>
+        </ul>
+      </nav>
+
+      <div style="padding-top: 40px;padding-left:40px;color:rgb(8, 8, 83);
+display: inline-block;font-family :Varela Round;font-weight: bold;font-size: 50px; text-align:left;">ADD QUESTIONS</div>
+
+<div style="color:rgb(8, 8, 83);
+font-family :Varela Round;font-weight: bold;font-size:50 px;margin-left:35px;margin-bottom:20px">&nbsp;&nbsp;&nbsp;Admin</div>
+    <div style="padding-left: 20%;
+    padding-top: 100px;">
+    <div id="Add_Question_Main_Screen" >
+   
+      <div id = "form_div">
+    <form [formGroup]="addForm">
+
+          <label class="text" for="subject">Choose a Subject :</label>
+          <select id="subject" name="subject" class="form-select" formControlName="subject">
+          <option class="text" selected disabled>Subjects</option>
+          <option class="text" [value]="t" *ngFor="let t of techList" >{{t}}</option> 
+            
+          </select>
+          <div class="error">
+          <span *ngIf="subject?.errors && subject?.touched">
+            <span class="text" *ngIf="subject?.errors?.required">Required</span>
+          </span>
+        </div>
+      <br>
+
+      <label class="text">Upload your CSV File:</label>
+
+      <input type="file" class="form-select"  formControlName="filePath" #fileImportInput name="File Upload" id="myFile" (change)="fileChangeListener($event)"
+    accept=".csv" />
+
+      <button class="button" type="submit" [disabled]="subject?.errors?.required 
+      || filePath?.errors?.required" (click)="submitFile()">Submit</button>
+    </form>
+  </div>
+  </div>
+</div>
+</div>

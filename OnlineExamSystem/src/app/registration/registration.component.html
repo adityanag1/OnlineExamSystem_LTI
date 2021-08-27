@@ -1,0 +1,287 @@
+ <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+
+
+<nav>
+  <ul>
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+  </ul>
+</nav>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="main">
+  <div class="regform">
+    <div *ngIf="isRegister" style="text-align: center; padding-top: 20px">
+      <i style="font-size: 120px" class="fa fa-user" aria-hidden="true"></i>
+      <br />
+      <p style="font-size: 40px">Registered Successfully</p>
+      <a href="/home" style="font-size: 20px"
+        >Back to Login &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i
+      ></a>
+    </div>
+
+    <div *ngIf="!isRegister">
+      <div style="text-align: center">
+        <p class="cen" style="margin-top:20px;color:orange">Student Registration</p>
+      </div>
+      <span style="display:inline-block; height: 20px;"></span>
+      <form [formGroup]="ConForm" >
+        <div style="display: flex; justify-content: center;flex-direction: row;">
+        <div class="form-group">
+          
+          <label  style="font-family:Varela Round;">Full Name:</label><br />
+          <input
+            type="text"
+            class="w3-input"
+            ngModel
+            pattern="[a-zA-Z ]*"
+            placeholder="Enter full name"
+            name="name"
+            style="width:300px;font-family:Varela Round;"
+            formControlName="name"
+            
+          />
+          <span
+            style="color: red"
+            *ngIf="name?.errors && name?.touched">
+            <span *ngIf="name?.errors?.required">Full Name is Required</span>
+            <span *ngIf="name?.errors?.pattern">Incorrect Format</span>
+          </span>
+        </div>
+
+        <span style="display:inline-block; width: 30px;"></span>
+
+        <div class="form-group">
+          <label  style="font-family:Varela Round;">Email address:</label>
+          <input
+            type="emailid"
+            class="w3-input"
+            placeholder="Enter email"
+            name="emailid"
+            formControlName="emailid"
+            style="width:300px;font-family:Varela Round;"
+            
+          />
+          <span style="color: red" *ngIf="emailid?.errors && emailid?.touched">
+            <span *ngIf="emailid?.errors?.required">Email address is Required</span>
+            <span *ngIf="emailid?.errors?.pattern">incorrect format</span>
+          </span>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center;flex-direction: row;">
+        <div class="form-group">
+           <label  style="font-family:Varela Round;">Phone Number:</label>
+          <input
+            type="text"
+            class="w3-input"
+            placeholder="Enter phone number"
+            name="mobile"
+            formControlName="mobile"
+            style="width:300px;font-family:Varela Round;"
+          />
+          <span
+            style="color: red"
+            class=""
+            *ngIf="mobile?.errors && mobile?.touched"
+          >
+            <span *ngIf="mobile?.errors?.required"
+              >Phone number is Required</span
+            >
+            <span *ngIf="mobile?.errors?.pattern"
+              >Phone number is not in desired format</span
+            >
+          </span>
+        </div>
+
+        <span style="display:inline-block; width: 30px;"></span>
+
+        
+          <div class="form-group col-md-6" style="float: none">
+             <label  style="font-family:Varela Round;">DOB:</label>
+              <span style="display:inline-block; height: 5px;"></span>
+              <div style="display: flex; justify-content: center;flex-direction: row;">
+            
+        
+            <input
+              type="date"
+              class="w3-input"
+              name="dob"
+              formControlName="dob"
+              style="width:300px;font-family:Varela Round;"
+            />
+          </div>
+        </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center;flex-direction: row;">
+          <div class="form-group">
+           
+           
+               <label  style="font-family:Varela Round;">City:</label>
+            <input
+              id="Full Name"
+              name="Full Name"
+              placeholder="Eg:- Mumbai"
+              class="w3-input"
+              type="text"
+              name="city"
+              formControlName="city"
+              style="width:300px;font-family:Varela Round;"
+            />
+            <span style="color: red"
+              *ngIf="city?.errors && city?.touched">
+              <span *ngIf="city?.errors?.required">City is Required</span>
+            </span>
+          </div>
+
+          <span style="display:inline-block; width: 30px;"></span>
+         
+          <div class="form-group ">
+             <label  style="font-family:Varela Round;">State:</label>
+
+            <select
+              name="state"
+              id="state"
+              class="w3-input"
+              formControlName="state"
+              style="width:300px;font-family:Varela Round;"
+            >
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Andaman and Nicobar Islands">
+                Andaman and Nicobar Islands
+              </option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadar and Nagar Haveli">
+                Dadar and Nagar Haveli
+              </option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+
+            <span
+              style="color: red"
+              class=""
+              *ngIf="state?.errors && state?.touched">
+              <span *ngIf="state?.errors?.required">State is Required</span>
+            </span>
+          </div>
+        </div>
+      
+
+        <div style="display: flex; justify-content: center;flex-direction: row;">
+          <div class="form-group">
+             <label  style="font-family:Varela Round;">Qualification:</label>
+            <select
+              class="w3-input"
+              id="exampleFormControlSelect1"
+              name="qualification"
+              formControlName="qualification"
+              style="width:300px;font-family: Varela Round;"
+            >
+              <option>BE</option>
+              <option selected>B Tech</option>
+              <option>BSC</option>
+            </select>
+            <span
+              style="color: red"
+              class=""
+              *ngIf="qualification?.errors && qualification?.touched"
+            >
+              <span *ngIf="qualification?.errors?.required"
+                >Qualification is Required</span
+              >
+            </span>
+          </div>
+          <span style="display:inline-block; width: 30px;"></span>
+          <div class="form-group col-md-6">
+             <label  style="font-family:Varela Round;">Year of Completion:</label>
+            <select
+              class="w3-input"
+              name="yearofcompletion"
+              formControlName="yearofcompletion"
+              style="width:300px;font-family: Varela Round;">
+              <option selected>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+            </select>
+            <span style="color: red" *ngIf="yearofcompletion?.errors && yearofcompletion?.touched">
+              <span *ngIf="yearofcompletion?.errors?.required">
+                Year of Completion is Required</span>
+            </span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+             <label  style="font-family:Varela Round;">Password:</label>
+            <input
+              type="password"
+              class="w3-input"
+              id="inputEmail4"
+              title="Must contain at least 8 characters&#10;Must contain at least one uppercase letter&#10;Must contain at least one lowercase letter&#10;Must contain at least one number&#10;Must contain at least one special characters(!”#$%&'()*+,-./:;<=>?@[\]^_`{|}~ )"
+              name="password"
+              formControlName="password"
+              style="width:300px;font-family: Varela Round;"
+            />
+            <span style="color: red"
+              *ngIf="password?.errors && password?.touched">
+              <span *ngIf="password?.errors?.required">Password is Required</span>
+              <span *ngIf="password?.errors?.pattern">incorrect format</span>
+            </span>
+          </div>
+         
+        </div>
+        <div style="text-align: center">
+          <button
+            type="submit"
+            (click)="onclick()"
+            [disabled]="ConForm.invalid"
+            class="button">
+            Register
+          </button>
+         
+        </div>
+       
+        
+      </form>
+      <div style="text-align: center">
+        <a style="font-family:Varela Round;color:orange;font-size: 15px;" routerLink="/Login">Already have an account? Login</a>
+        
+      </div>
+    </div>
+  </div>
+</div>

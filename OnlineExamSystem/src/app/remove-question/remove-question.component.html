@@ -1,0 +1,81 @@
+
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+
+<div class="outer">
+
+  <nav>
+    <ul>
+      <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AdminHome">Dashboard</a></li>
+        <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/AboutUs"> About</a></li>
+          <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/FAQ">FAQ</a></li>
+          <li style="font-family: Varela Round;font-weight:medium;color:white"><a routerLink="/Home">Log out</a></li>
+    </ul>
+  </nav>
+
+  <div style="padding-top: 40px;padding-left:40px;color:rgb(8, 8, 83);
+display: inline-block;font-family :Varela Round;font-weight: bold;font-size: 50px; text-align:left;">REMOVE QUESTIONS</div>
+
+<div style="color:rgb(8, 8, 83);
+font-family :Varela Round;font-weight: bold;font-size:50 px;margin-left:35px;margin-bottom:20px">&nbsp;&nbsp;&nbsp;Admin</div>
+<div style="padding-left: 20%;
+padding-top: 100px;">
+
+     
+  <div class="flex-container" style="margin-bottom: 50px;">
+    <h3 class="text"style="text-align:center">Choose subject to remove questions from</h3>
+    <div class="grid">
+    <div style=" padding-left: 180px;
+    padding-bottom: 20px;">
+    <ng-container class="container-fluid" *ngFor="let t of techList" >
+      <br>
+      <button class="button" type="button" 
+      (click)="deleteQuestions(t)">{{t}}
+      </button>
+      <br />
+       </ng-container>
+
+    </div>
+  </div>
+ 
+
+
+    <!-- <button [value]="t"  (click)="deleteQuestions(t)" 
+    *ngFor="let t of techList">{{t}}</button> -->
+
+
+    <!-- <form>
+      <h2>Java</h2>
+      <button (click)="deleteQuestions('Java')">Remove Questions</button>
+
+    </form>
+
+    <form>
+      <h2>SQL</h2>
+      <button (click)="deleteQuestions('SQL')">Remove Questions</button>
+    </form>
+
+    <form>
+      <h2>PHP</h2>
+      <button (click)="deleteQuestions('PHP')">Remove Questions</button>
+    </form>
+
+    <form>
+      <h2>Cplus</h2>
+      <button (click)="deleteQuestions('Cplus')">Remove Questions</button>
+    </form>
+
+    <form>
+      <h2>Python</h2>
+      <button (click)="deleteQuestions('Python')">Remove Questions</button>
+    </form>
+
+    <form>
+      <h2>.NET</h2>
+      <button (click)="deleteQuestions('.NET')">Remove Questions</button>
+    </form> -->
+  </div>
+  </div>

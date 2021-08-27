@@ -1,0 +1,37 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Varela Round"
+/>
+<div class="instructions-div" >
+    <h1 class="instructions-header" style="text-align: center;">
+        {{subjectName}} Exam Instructions
+    </h1>
+    <mat-list style = "font-family:Varela Round;">
+        <mat-list-item>
+            <div mat-line style = "font-family:Varela Round;">Exam has a total of <span style="font-weight: bold;font-family:Varela Round;">10 questions</span>. All questions are
+                <span style="font-weight: bold;">MCQ</span>.</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div mat-line style = "font-family:Varela Round;"><span style="font-weight: bold;font-family:Varela Round;">Do not</span> click back button or refresh the tab anytime while taking the
+                test, or you will be <span style="font-weight: bold;">logged out</span></div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div mat-line style = "font-family:Varela Round;"><span style="font-weight: bold;font-family:Varela Round;">No</span> negative marking</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div mat-line style = "font-family:Varela Round;">Total time for exam is <span style="font-weight: bold;font-family:Varela Round;">{{examDuration}} minutes</span>.</div>
+        </mat-list-item>
+        <mat-list-item>
+            <div mat-line style = "font-family:Varela Round;">This exam will have a total of 3 levels. You'll need to pass each level to get to the next one.</div>
+        </mat-list-item>
+    </mat-list>
+    <div class="start-test-button-div" fxLayout="row wrap" fxLayoutAlign="center">
+        <button color="primary" class="start-test-button" mat-raised-button (click)="startTest()">
+            <span style="font-weight: bold;font-family:Varela Round;">Start Test</span>
+        </button>
+    </div>
+</div>
+<router-outlet></router-outlet>

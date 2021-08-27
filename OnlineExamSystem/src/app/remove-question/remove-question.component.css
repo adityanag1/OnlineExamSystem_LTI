@@ -1,0 +1,108 @@
+.outer{
+    overflow: hidden;
+    background-image: url('../../assets/login-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: fit-content;
+    width: 100%;
+    min-height: 100vh;
+    
+}
+.btn{
+    background-color: orange;
+    color: white;
+    border:5px white;
+    width: 150px;
+    height: 40px;
+    border-radius: 10%;
+    font-size: 20px;
+    font-family:Varela Round;
+}
+.flex-container{
+    align-items: center;
+	box-sizing: border-box;
+ 
+  
+   
+    max-width: 500px; 
+    position:relative;
+    top:0px; 
+   
+    
+
+    border-radius: 10px;background-color:rgb(255, 246, 122);
+  
+     border-style: solid;
+     border-color:orange;
+     border-width: 3px;
+      display:inline-block;
+      
+      font-family :Varela Round;
+      border-radius: 10px;
+      box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+}
+.text {
+    font-family:Varela Round;
+}
+button{
+    width: 110px;
+    height: 50px;
+    background-color: orange;
+         color :white;
+         padding: 10px;
+         margin: 4px 2px;
+         text-align:center;
+         display:inline-block;
+         border-radius:12px ;
+         border:none;
+         font-size: 16px;
+         font-family:Varela Round;
+         font-weight:medium;
+
+
+
+}
+.button:hover{
+    color: white;
+    background-color: rgb(252, 192, 80);
+    
+}
+.grid {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Create 2 columns and auto-place rows */
+}
+
+
+
+form{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.col-md-6{
+    padding-left: 0px;
+}
+.form-group{
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    height: 95px;
+}
+label{
+    font-family:Varela Round;
+}
+nav{
+  
+    top:0px;
+    position: absolute;
+    right:30px;
+}
+a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+}
+li{
+    list-style-type: none;
+    padding: 10px;
+    display: inline-block;
+}
